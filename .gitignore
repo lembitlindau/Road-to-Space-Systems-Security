@@ -1,0 +1,42 @@
+# Build directories
+build/
+**/build/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Keep important cmake files
+!CMakeLists.txt
+!pico_sdk_import.cmake
+
+# Compiled files
+*.o
+*.elf
+*.bin
+*.hex
+*.uf2
+*.dis
+*.map
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,45 +1,57 @@
 # Road to Space Systems Security
 
-![Road to Space Systems Security]
+> My journey from microcontrollers to space systems — learning embedded systems, RTOS, and cybersecurity from the ground up.
 
-This image illustrates the learning path and hierarchy of topics to study:
-- Bare Metal (C / Assembly): direct hardware control, GPIO/IC/SPI, interrupts and registers — e.g., Raspberry Pi Pico, STM.
-- RTOS (FreeRTOS / Zephyr): multiple threads/tasks, precise timing, scheduling and real-time concepts.
-- Embedded Linux (Buildroot / Yocto): filesystems, kernels, services, networking (TCP/IP, SSH, TLS, CAN), kernel builds and drivers.
-- Space Systems & Cybersecurity: RTEMS / VxWorks / QNX on satellites, Yocto/Linux for ground segments and payload operations, CCSDS/SpaceWire and security measures (Secure Boot, AppArmor, cryptography).
+![Road to Space Systems Security](assets/road-to-space-stack.png)
 
-## 📅 2025-11-04 — MicroPython → C → FreeRTOS on Raspberry Pi Pico
+## 🎯 Learning Path
 
-### 🎯 Goal
-Start hands-on learning of RTOS fundamentals on microcontrollers by building a FreeRTOS-based multitasking example on the Raspberry Pi Pico.
+This repository documents my progression through embedded systems development:
 
-### ✅ What I did
-- Got `blink.py` running with MicroPython for quick testing
-- Set up the Pico SDK and compiled first C project using CMake
-- Created clean project structure: `main.c + CMakeLists.txt + build/`
-- Integrated FreeRTOS manually:
-  - Cloned the official `FreeRTOS-Kernel` repository
-  - Used the `portable/ThirdParty/GCC/RP2040/` port
-  - Created and configured `FreeRTOSConfig.h`
-- Implemented a multitasking example:
-  - `led_task`: blinks onboard LED every 500 ms
-  - `uart_task`: sends log messages every 1 second via USB CDC
-- Compiled `.uf2` using `cmake` and `make`, flashed to Pico
-- Verified output using `screen /dev/ttyACM0` on Linux
+1. **Bare Metal** (C / Assembly): Direct hardware control, GPIO/I2C/SPI, interrupts and registers
+2. **RTOS** (FreeRTOS / Zephyr): Multiple threads/tasks, precise timing, scheduling and real-time concepts
+3. **Embedded Linux** (Buildroot / Yocto): Filesystems, kernels, services, networking (TCP/IP, SSH, TLS, CAN)
+4. **Space Systems & Cybersecurity**: RTEMS / VxWorks / QNX, CCSDS/SpaceWire, Secure Boot, cryptography
 
-### 🧠 What I learned
-- The basics of FreeRTOS: tasks, priorities, delays
-- FreeRTOS integration into bare-metal C projects
-- How to handle missing files and build errors (e.g. `port.c`, `FreeRTOSConfig.h`)
-- Understanding of how FreeRTOS maps to Cortex-M0+ hardware (Pico)
-- Practical workflow for switching from MicroPython to C/RTOS development
-- How to use USB serial to monitor system behavior
+## � Repository Structure
 
-### 🔜 Next steps
-- Add `uxTaskGetSystemState()` to log task runtime info
-- Implement queues between tasks (e.g. sensor → logger)
-- Introduce interrupt handlers that push data to queues
-- Connect a real sensor and simulate real-time task communication
+```
+├── 01-bare-metal/          # Bare metal projects (GPIO, interrupts, peripherals)
+├── 02-rtos/                # Real-Time OS projects
+│   └── freertos-multitask/ # FreeRTOS multitasking example
+├── 03-embedded-linux/      # Linux-based embedded projects
+├── 04-space-systems/       # Space systems and security projects
+├── assets/                 # Images and diagrams
+└── README.md              # This file
+```
 
----
+## 🚀 Projects
+
+### 02-rtos — Real-Time Operating Systems
+
+#### [FreeRTOS Multitasking](02-rtos/freertos-multitask/) — 2025-11-04
+First RTOS project implementing concurrent tasks on Raspberry Pi Pico.
+- **Tech**: FreeRTOS, RP2040, CMake, Pico SDK
+- **Features**: LED blinking task, UART logging task, USB CDC output
+- **Learned**: Task creation, scheduling, delays, FreeRTOS integration
+
+## 📚 Resources & References
+
+- [Raspberry Pi Pico Documentation](https://www.raspberrypi.com/documentation/microcontrollers/)
+- [FreeRTOS Documentation](https://www.freertos.org/Documentation/RTOS_book.html)
+- [Pico SDK](https://github.com/raspberrypi/pico-sdk)
+
+## 🛠️ Development Environment
+
+- **Hardware**: Raspberry Pi Pico (RP2040)
+- **OS**: Linux (Ubuntu/Debian)
+- **Tools**: CMake, GCC ARM, Pico SDK, screen/minicom
+- **Languages**: C, Assembly (future), Python (testing)
+
+## 📈 Progress Timeline
+
+- **2025-11-04**: FreeRTOS multitasking basics ✅
+- **Future**: Queues, semaphores, interrupts, sensor integration
+- **Future**: Embedded Linux exploration
+- **Future**: Space systems security
 
