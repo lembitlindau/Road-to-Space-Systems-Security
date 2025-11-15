@@ -27,6 +27,14 @@ This repository documents my progression through embedded systems development:
 
 ## 🚀 Projects
 
+### 01-bare-metal — Bare Metal Programming
+
+#### [BME280 I2C Sensor](01-bare-metal/bme280-i2c/) — 2025-11-15
+Environmental sensor (temperature, humidity, pressure) using I2C communication.
+- **Tech**: MicroPython, I2C protocol, BME280
+- **Features**: Real-time sensor readings, calibrated measurements
+- **Learned**: I2C communication, soldering, MicroPython pin restrictions, troubleshooting
+
 ### 02-rtos — Real-Time Operating Systems
 
 #### [FreeRTOS Multitasking](02-rtos/freertos-multitask/) — 2025-11-04
@@ -50,8 +58,9 @@ First RTOS project implementing concurrent tasks on Raspberry Pi Pico.
 
 ## 📈 Progress Timeline
 
+- **2025-11-15**: BME280 I2C sensor communication ✅
 - **2025-11-04**: FreeRTOS multitasking basics ✅
-- **Future**: Queues, semaphores, interrupts, sensor integration
+- **Next**: Queues, semaphores, interrupts, sensor integration with RTOS
 - **Future**: Embedded Linux exploration
 - **Future**: Space systems security
 
